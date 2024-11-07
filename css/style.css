@@ -1,0 +1,318 @@
+*, *::after, *:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+a, a:visited, a:link {
+  color: #eee;
+  text-decoration: none;
+}
+
+body {
+  font-size: 2rem;
+  background: #1230AE;
+  font-family: "Lato", sans-serif;
+}
+
+.gallerij__button, .header__button, .nav__button {
+  width: 11rem;
+  padding: 0.5rem;
+  font-size: 70%;
+  background: #FF6600;
+  border: none;
+  color: #eee;
+  border-radius: 1rem;
+  text-transform: uppercase;
+}
+
+.gallerij__button:hover, .header__button:hover, .nav__button:hover {
+  cursor: pointer;
+  background: rgb(153, 61.2, 0);
+  transition: 0.2s;
+}
+
+.footer__header, .gallerij__header, .kenmerken__header, .over__header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.footer__h2, .gallerij__h2, .kenmerken__h2, .over__h2, .header__h2 {
+  font-family: "Dancing Script", cursive;
+  font-size: 380%;
+  color: #eee;
+}
+
+.footer, .gallerij, .kenmerken, .over {
+  height: 80rem;
+  border-bottom: 0.2rem solid #f9f9f9;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.kenmerken__icon, .header__logo, .nav__logo {
+  font-size: 250%;
+  color: #eee;
+  border: 0.5rem solid #f9f9f9;
+  border-radius: 50%;
+  padding: 1.5rem;
+}
+
+.nav {
+  width: 100%;
+  background: #1230AE;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 7rem;
+  color: #eee;
+  padding: 2rem;
+  text-transform: uppercase;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.header {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.header__figure {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to bottom right, rgba(255, 102, 0, 0.6), rgba(18, 48, 174, 0.5) 80%), url("../img/samsung.jpg");
+  background-position: bottom;
+  background-size: cover;
+}
+
+.header > figure > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  color: #eee;
+  text-align: center;
+}
+
+.header__h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 500%;
+}
+
+.over__columns {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  height: 100%;
+}
+
+.over__column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.over__p {
+  width: 55ch;
+  color: #eee;
+}
+
+.over__figure {
+  position: relative;
+  width: 40rem;
+  height: 60rem;
+}
+
+.over__figure::after {
+  content: "";
+  background: linear-gradient(to bottom right, rgba(255, 102, 0, 0.6), rgba(18, 48, 174, 0.5) 80%);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.over__img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.kenmerken__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+}
+
+.kenmerken__listItem {
+  list-style: none;
+  color: #eee;
+  width: 40%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.kenmerken__p {
+  width: 30ch;
+  text-align: center;
+}
+
+.kenmerken__icon {
+  font-size: 180%;
+}
+
+.gallerij__fotos {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.gallerij__foto {
+  width: 25%;
+  height: 400%;
+  position: relative;
+}
+
+.gallerij__gradient {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, rgba(255, 102, 0, 0.6), rgba(18, 48, 174, 0.5) 80%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transition: 0.8s;
+  transform-origin: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallerij__button {
+  opacity: 0;
+  transition-delay: 0.8s;
+  transition-duration: 0.2s;
+}
+
+.gallerij__foto:hover .gallerij__button {
+  opacity: 1;
+}
+
+.gallerij__foto:hover .gallerij__gradient {
+  transform: scale(1);
+}
+
+.gallerij__img {
+  height: 20rem;
+  width: 100%;
+  object-fit: fill;
+}
+
+@media screen and (max-width: 75rem) {
+  .body {
+    font-size: 1.6rem;
+  }
+  .header {
+    height: 140rem;
+  }
+  .over {
+    min-height: 120rem;
+  }
+  .over__header {
+    height: 10%;
+  }
+  .over__columns {
+    flex-direction: column;
+    height: 80%;
+  }
+  .over__column {
+    height: 60%;
+  }
+  .over__p {
+    width: 100%;
+  }
+  .over__figure {
+    width: 100%;
+    height: 40%;
+  }
+  .kenmerken {
+    min-height: 120rem;
+  }
+  .kenmerken__listItem {
+    width: 100%;
+  }
+  .gallerij {
+    height: auto;
+  }
+  .gallerij__fotos {
+    flex-wrap: wrap;
+  }
+  .gallerij__foto {
+    height: 20rem;
+    width: 100%;
+  }
+  .gallerij__foto:hover .gallerij__button {
+    opacity: 0;
+  }
+  .gallerij__foto:hover .gallerij__gradient {
+    transform: scale(0);
+  }
+  .footer__img {
+    transform: scale(0.5);
+  }
+}
+@media screen and (max-width: 50rem) {
+  .nav__list {
+    flex-direction: column;
+  }
+  .over__columns {
+    padding: 2rem;
+  }
+}
+.footer {
+  height: 100%;
+}
+
+.footer__list {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.footer__img {
+  height: 20rem;
+}
+
+/*# sourceMappingURL=style.css.map */
